@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+func main(){
+
+    var num int
+    fmt.Scan(&num)
+    // счастливым считается билет, в шестизначном номере которого сумма первых трёх цифр совпадает с суммой трёх последних
+    secLast := num%10
+    prSlast := num / 10 % 10
+    prPrSlast := num / 100 % 10
+    
+    firLast := num / 1000 % 10
+    prFlast := num / 10000 % 10
+    prPrFlast := num / 100000
+    
+    firstPart := firLast + prFlast + prPrFlast
+    secondPart := secLast + prSlast + prPrSlast
+    
+    
+    if firstPart == secondPart{
+        fmt.Println("YES")
+    }else{
+        fmt.Println("NO")}
+
+}
+
+
+
+
